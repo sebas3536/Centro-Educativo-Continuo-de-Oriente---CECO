@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --primary-blue: #0d6efd;
@@ -34,17 +35,19 @@
                 min-height: 100vh;
             }
         }
+
         @media (min-width: 768px) {
             body {
                 background-color: #cbd5e1;
             }
+
             .main-wrapper {
                 max-width: 480px;
                 margin: 20px auto;
                 background-color: var(--bg-instagram);
                 min-height: calc(100vh - 40px);
                 border-radius: 20px;
-                box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
                 overflow: hidden;
                 position: relative;
             }
@@ -64,6 +67,7 @@
             padding: 12px 15px;
             text-align: center;
         }
+
         .eslogan-text {
             font-size: 0.85rem;
             font-weight: 600;
@@ -78,6 +82,7 @@
             border-bottom: 1px solid #eaeaea;
             padding: 15px 10px;
         }
+
         .menu-circle-item {
             display: flex;
             flex-direction: column;
@@ -86,9 +91,11 @@
             color: var(--text-dark);
             transition: transform 0.2s ease;
         }
+
         .menu-circle-item:active {
             transform: scale(0.92);
         }
+
         .circle-icon-wrapper {
             width: 65px;
             height: 65px;
@@ -100,18 +107,21 @@
             justify-content: center;
             margin-bottom: 6px;
             overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
         }
+
         /* Estilo temporal por si no están los PNGs aún */
         .circle-icon-wrapper i {
             font-size: 1.5rem;
             color: var(--primary-blue);
         }
+
         .circle-icon-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .menu-circle-text {
             font-size: 0.68rem;
             font-weight: 700;
@@ -132,38 +142,44 @@
             align-items: center;
             padding: 15px 15px 10px 15px;
         }
+
         .section-title {
             font-size: 0.95rem;
             font-weight: 700;
             margin-bottom: 0;
             color: #1e1e1e;
         }
+
         .section-link {
             font-size: 0.78rem;
             font-weight: 600;
             color: var(--primary-blue);
             text-decoration: none;
         }
-        
+
         .feed-card {
             border: none;
             border-radius: 12px;
             overflow: hidden;
             background-color: #fff;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
             height: 100%;
             transition: transform 0.2s ease;
         }
+
         .feed-card:active {
             transform: scale(0.98);
         }
+
         .feed-card .card-img-top {
             height: 130px;
             object-fit: cover;
         }
+
         .feed-card .card-body {
             padding: 10px;
         }
+
         .feed-card-title {
             font-size: 0.8rem;
             font-weight: 700;
@@ -185,6 +201,7 @@
             text-align: center;
             margin-bottom: 8px;
         }
+
         .btn-buy {
             font-size: 0.72rem;
             font-weight: 700;
@@ -217,11 +234,12 @@
             align-items: center;
             justify-content: center;
             font-size: 1.8rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             z-index: 1000;
             text-decoration: none;
             transition: transform 0.2s ease;
         }
+
         @media (min-width: 768px) {
             .btn-whatsapp-float {
                 position: absolute;
@@ -229,13 +247,13 @@
                 right: 20px;
             }
         }
+
         .btn-whatsapp-float:active {
             transform: scale(0.9);
         }
 
-        /* ==========================================================================
-           Sección de Aliados (Slider Infinito) - Móvil
-           ========================================================================== */
+        /* =============Sección de Aliados===============*/
+
         .aliados-section {
             background-color: #fff;
             padding: 25px 0;
@@ -295,7 +313,8 @@
         /* Pista del Slider */
         .slider-track {
             display: flex;
-            width: calc(140px * 40); /* 20 logos originales + 20 duplicados */
+            width: calc(140px * 40);
+            /* 20 logos originales + 20 duplicados */
             animation: scrollAliadosMovil 30s linear infinite;
         }
 
@@ -333,37 +352,42 @@
             0% {
                 transform: translateX(0);
             }
+
             100% {
                 transform: translateX(calc(-140px * 20));
             }
         }
     </style>
 </head>
+
 <body>
 
     <div class="main-wrapper">
-        
+
         <!-- Cabecera / Perfil -->
         <header class="bg-white border-bottom py-3 px-3">
             <div class="d-flex flex-column align-items-center text-center">
                 <div class="mb-2">
                     <!-- Ajustado exactamente con width:auto y height:50px para logos horizontales -->
-                    <img src="assets/img/logo.png" alt="Logo CECO" style="width:auto; height: 50px; object-fit: contain;">
+                    <img src="assets/img/logo.png" alt="Logo CECO"
+                        style="width:auto; height: 50px; object-fit: contain;">
                 </div>
                 <p class="text-muted small mb-3" style="font-size: 0.75rem;">Centro de Educación Continua de Oriente</p>
-                <button class="btn btn-primary btn-sm px-4 fw-bold rounded-pill shadow-sm" style="font-size: 0.8rem;">Inscripciones Abiertas</button>
+                <button class="btn btn-primary btn-sm px-4 fw-bold rounded-pill shadow-sm"
+                    style="font-size: 0.8rem;">Inscripciones Abiertas</button>
             </div>
         </header>
 
         <!-- Eslogan Cohesivo -->
         <div class="eslogan-container">
-            <p class="eslogan-text"><i class="bi bi-cursor-fill me-1"></i> "Estudiar con nosotros es estar a un click del éxito"</p>
+            <p class="eslogan-text"><i class="bi bi-cursor-fill me-1"></i> "Estudiar con nosotros es estar a un click
+                del éxito"</p>
         </div>
 
         <!-- Menú de Accesos Rápidos (Grilla Fija de 8 Íconos 4x2) -->
         <div class="menu-circular-container">
             <div class="row row-cols-4 g-3">
-                
+
                 <!-- Ícono 1: Programas -->
                 <div class="col">
                     <a href="#programas-section" class="menu-circle-item">
@@ -468,17 +492,19 @@
                 <!-- Tarjeta 1 -->
                 <div class="col-6">
                     <div class="card feed-card">
-                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=300&q=80" class="card-img-top" alt="Logística Portuaria">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=300&q=80"
+                            class="card-img-top" alt="Logística Portuaria">
                         <div class="card-body">
                             <h3 class="feed-card-title">Logística Portuaria</h3>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Tarjeta 2 -->
                 <div class="col-6">
                     <div class="card feed-card">
-                        <img src="https://images.unsplash.com/photo-1555243896-c709bfa0b564?auto=format&fit=crop&w=300&q=80" class="card-img-top" alt="Sistemas informáticos">
+                        <img src="https://images.unsplash.com/photo-1555243896-c709bfa0b564?auto=format&fit=crop&w=300&q=80"
+                            class="card-img-top" alt="Sistemas informáticos">
                         <div class="card-body">
                             <h3 class="feed-card-title">Sistemas y Software</h3>
                         </div>
@@ -488,7 +514,8 @@
                 <!-- Tarjeta 3 -->
                 <div class="col-6">
                     <div class="card feed-card">
-                        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=300&q=80" class="card-img-top" alt="Cocina">
+                        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=300&q=80"
+                            class="card-img-top" alt="Cocina">
                         <div class="card-body">
                             <h3 class="feed-card-title">Técnico en Cocina</h3>
                         </div>
@@ -498,7 +525,8 @@
                 <!-- Tarjeta 4 -->
                 <div class="col-6">
                     <div class="card feed-card">
-                        <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=300&q=80" class="card-img-top" alt="Asistente de primera infancia">
+                        <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=300&q=80"
+                            class="card-img-top" alt="Asistente de primera infancia">
                         <div class="card-body">
                             <h3 class="feed-card-title">Asistente Primera Infancia</h3>
                         </div>
@@ -518,7 +546,8 @@
                 <!-- Tarjeta Curso 1 -->
                 <div class="col-6">
                     <div class="card feed-card border border-success border-opacity-10">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=300&q=80" class="card-img-top" alt="IA">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=300&q=80"
+                            class="card-img-top" alt="IA">
                         <div class="card-body d-flex flex-column justify-content-between">
                             <h3 class="feed-card-title mb-2">Diplomado Inteligencia Artificial</h3>
                             <div class="mt-auto">
@@ -532,7 +561,8 @@
                 <!-- Tarjeta Curso 2 -->
                 <div class="col-6">
                     <div class="card feed-card border border-success border-opacity-10">
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=300&q=80" class="card-img-top" alt="Seguridad">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=300&q=80"
+                            class="card-img-top" alt="Seguridad">
                         <div class="card-body d-flex flex-column justify-content-between">
                             <h3 class="feed-card-title mb-2">Seguridad Industrial y BASC</h3>
                             <div class="mt-auto">
@@ -549,7 +579,7 @@
         <section class="aliados-section">
             <h2 class="section-title">Nuestros Aliados</h2>
             <p class="section-subtitle">Empresas e instituciones aliadas</p>
-            
+
             <div class="slider-wrapper">
                 <div class="slider-track">
                     <!-- Bloque Original (20 Logos) -->
@@ -575,7 +605,8 @@
                         <img src="../img/aliados/lagit.png" alt="Lagit">
                     </div>
                     <div class="slide-item">
-                        <img src="../img/aliados/logo Escuela conductores inteligentes.png" alt="Escuela de Conductores Inteligentes">
+                        <img src="../img/aliados/logo Escuela conductores inteligentes.png"
+                            alt="Escuela de Conductores Inteligentes">
                     </div>
                     <div class="slide-item">
                         <img src="../img/aliados/logo-cie_arcelona.png" alt="CIE Arcelona">
@@ -593,7 +624,8 @@
                         <img src="../img/aliados/logo_brasilia.png" alt="Expreso Brasilia">
                     </div>
                     <div class="slide-item">
-                        <img src="../img/aliados/logo_institucion_universitaria_barranquilla.png" alt="Institución Universitaria Barranquilla">
+                        <img src="../img/aliados/logo_institucion_universitaria_barranquilla.png"
+                            alt="Institución Universitaria Barranquilla">
                     </div>
                     <div class="slide-item">
                         <img src="../img/aliados/logo_intracienega.png" alt="Intraciénega">
@@ -637,7 +669,8 @@
                         <img src="../img/aliados/lagit.png" alt="Lagit">
                     </div>
                     <div class="slide-item">
-                        <img src="../img/aliados/logo Escuela conductores inteligentes.png" alt="Escuela de Conductores Inteligentes">
+                        <img src="../img/aliados/logo Escuela conductores inteligentes.png"
+                            alt="Escuela de Conductores Inteligentes">
                     </div>
                     <div class="slide-item">
                         <img src="../img/aliados/logo-cie_arcelona.png" alt="CIE Arcelona">
@@ -655,7 +688,8 @@
                         <img src="../img/aliados/logo_brasilia.png" alt="Expreso Brasilia">
                     </div>
                     <div class="slide-item">
-                        <img src="../img/aliados/logo_institucion_universitaria_barranquilla.png" alt="Institución Universitaria Barranquilla">
+                        <img src="../img/aliados/logo_institucion_universitaria_barranquilla.png"
+                            alt="Institución Universitaria Barranquilla">
                     </div>
                     <div class="slide-item">
                         <img src="../img/aliados/logo_intracienega.png" alt="Intraciénega">
@@ -681,7 +715,8 @@
 
         <!-- Pie de Página Minimalista -->
         <footer>
-            <p class="fw-bold mb-1" style="color: var(--primary-blue);">CECO - Centro de Educación Continua de Oriente</p>
+            <p class="fw-bold mb-1" style="color: var(--primary-blue);">CECO - Centro de Educación Continua de Oriente
+            </p>
             <p class="mb-3">Calle 23 No 26-128 Soledad - Atlántico</p>
             <div class="d-flex justify-content-center gap-3 mb-3">
                 <a href="#" class="text-secondary text-decoration-none small">Nosotros</a> &middot;
@@ -701,4 +736,5 @@
     <!-- Bootstrap 5.3.2 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

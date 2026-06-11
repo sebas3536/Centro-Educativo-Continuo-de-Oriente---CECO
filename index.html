@@ -20,6 +20,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
 </head>
 
 <body>
@@ -51,8 +54,8 @@
     </header>
     <!-- Fin Header -->
 
-    <!-- 2. BANNER PUBLICITARIO DE ENTRADA -->
-    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+    <!-- BANNER PUBLICITARIO DE ENTRADA -->
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
         <!-- Slides -->
         <div class="carousel-inner">
@@ -62,40 +65,40 @@
                 <img src="img/Mercadeo.png" class="d-block w-100" alt="Slide 1">
 
                 <div class="hero-content">
-                    <h1>Bienvenidos a nuestra institución</h1>
-                    <p>Formación técnica con calidad y compromiso</p>
+                    <h1>Conviértete en un experto en Marketing Digital</h1>
+                    <p>Crea campañas efectivas y aprende a vender en el mundo digital</p>
 
                     <div class="hero-buttons">
-                        <a href="#" class="btn btn-primary btn-lg">Ver programas</a>
-                        <a href="#" class="btn btn-outline-light btn-lg">Contáctanos</a>
+                        <a href="#" class="btn btn-primary btn-lg">Ver programa</a>
+                        <a href="#" class="btn btn-outline-light btn-lg">Comenzar hoy</a>
                     </div>
                 </div>
             </div>
 
             <!-- Slide 2 -->
             <div class="carousel-item hero-slide">
-                <img src="img/Mercadeo.png" class="d-block w-100" alt="Slide 2">
+                <img src="img/industrual.png" class="d-block w-100" alt="Slide 2">
 
                 <div class="hero-content">
-                    <h1>Educación que transforma vidas</h1>
-                    <p>Aprende habilidades para el mundo laboral</p>
+                    <h1>Conviértete en guardián de la seguridad industrial</h1>
+                    <p>Diseña, implementa y supervisa sistemas de seguridad en empresas</p>
 
                     <div class="hero-buttons">
-                        <a href="#" class="btn btn-primary btn-lg">Inscribirse</a>
+                        <a href="#" class="btn btn-primary btn-lg">Ver programa académico</a>
                     </div>
                 </div>
             </div>
 
             <!-- Slide 3 -->
             <div class="carousel-item hero-slide">
-                <img src="img/Mercadeo.png" class="d-block w-100" alt="Slide 3">
+                <img src="img/Cocina.png" class="d-block w-100" alt="Slide 3">
 
                 <div class="hero-content">
-                    <h1>Cursos técnicos y certificados</h1>
-                    <p>Mejora tu futuro profesional hoy</p>
+                    <h1>Conviértete en un chef profesional</h1>
+                    <p>Aprende las técnicas culinarias más avanzadas y sorprende a tus clientes</p>
 
                     <div class="hero-buttons">
-                        <a href="#" class="btn btn-primary btn-lg">Explorar cursos</a>
+                        <a href="#" class="btn btn-primary btn-lg">Quiero estudiar cocina</a>
                     </div>
                 </div>
             </div>
@@ -114,21 +117,32 @@
     <!-- Fin BANNER PUBLICITARIO DE ENTRADA -->
 
     <!-- Eslogan Cohesivo -->
-    <div class="eslogan-container">
+    <div class="eslogan-container" data-aos="fade-up">
         <p class="eslogan-text"><i class="bi bi-cursor-fill me-1"></i> "Estudiar con nosotros es estar a un click del
             éxito"</p>
     </div>
     <!-- Fin Eslogan Cohesivo -->
 
-
     <!-- Sección de Nuestra institucion -->
-    <section class="institucion-section">
+    <section class="institucion-section" data-aos="fade-up">
         <div class="container">
-            <div class="row align-items-center g-5 py-5">
+            <div class="row align-items-center py-5">
+
+                <!-- Imagen -->
+                <div class="col-lg-6 text-center order-1 order-lg-2">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Nuestra Institución" class="img-fluid rounded shadow w-100">
+                </div>
+
                 <!-- Contenido -->
-                <div class="col-lg-6">
-                    <h2 class="text-primary fw-semibold text-uppercase mt-4">Nuestra Institución</h2>
-                    <p class="display-6 fw-bold mt-2 mb-4">Formando profesionales con excelencia académica</p>
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <h2 class="text-primary fw-semibold text-uppercase mt-4 text-center text-lg-start">
+                        Nuestra Institución
+                    </h2>
+
+                    <p class="display-6 fw-bold mt-2 mb-4 text-center text-lg-start">
+                        Formando profesionales con excelencia académica
+                    </p>
 
                     <p class="text-secondary">
                         Somos una entidad educativa comprometida con la formación integral
@@ -143,24 +157,21 @@
                         de nuestra comunidad.
                     </p>
 
-                    <div class="mt-4">
+                    <div class="mt-4 text-center text-lg-start">
                         <a href="#" class="btn btn-primary btn-lg px-5 py-3 shadow">
                             Conoce más
                         </a>
                     </div>
                 </div>
-                <!-- Imagen -->
-                <div class="col-lg-6 text-center">
-                    <img src="img/Mercadeo.png" alt="Nuestra Institución" class="img-fluid rounded shadow w-100">
-                </div>
+
             </div>
         </div>
     </section>
     <!-- Fin Sección de Nuestra institucion-->
 
     <!-- Menú de Accesos Rápidos (Grilla Fija de 8 Íconos 4x2) -->
-    <div class="menu-circular-container">
-        <div class="row row-cols-4 g-3">
+    <div class="menu-circular-container" data-aos="fade-up">
+        <div class="row row-cols-4 g-5">
 
             <!-- Ícono 1: Programas -->
             <div class="col">
@@ -250,19 +261,224 @@
                     <span class="menu-circle-text">CECO</span>
                 </a>
             </div>
-
         </div>
     </div>
     <!-- Fin Menú de Accesos Rápidos (Grilla Fija de 8 Íconos 4x2) -->
 
+    <!-- Feed de Programas Académicos -->
+    <section id="programas-section" class="px-2" data-aos="fade-up">
+        <div class="section-title-container">
+            <h2 class="display-6 fw-bold mb-0">
+                Nuestros Programas
+            </h2>
+            <a href="#" class="text-primary small fw-semibold text-decoration-none">
+                Ver todos
+            </a>
+        </div>
+        <div class="row g-2 px-2">
+
+            <div class="col-6 col-md-3">
+                <div class="card feed-card">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+                    <div class="card-body">
+                        <div class="feed-card-title">Logística</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="card feed-card">
+                    <img src="https://images.unsplash.com/photo-1555243896-c709bfa0b564">
+                    <div class="card-body">
+                        <div class="feed-card-title">Software</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="card feed-card">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d">
+                    <div class="card-body">
+                        <div class="feed-card-title">Cocina</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="card feed-card">
+                    <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3">
+                    <div class="card-body">
+                        <div class="feed-card-title">Infancia</div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Fin del feed de Programas Académicos -->
+
+    <!-- Qué esperar de nuestros cursos -->
+    <section class="py-5 bg-light" data-aos="fade-up">
+        <div class="container">
+
+            <!-- Encabezado -->
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">¿Qué esperar de nuestros cursos?</h2>
+                <p class="text-muted mx-auto" style="max-width: 700px;">
+                    Una experiencia de aprendizaje diseñada para ayudarte a desarrollar
+                    nuevas habilidades de forma flexible, práctica y profesional.
+                </p>
+            </div>
+
+            <!-- Beneficios -->
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100">
+                        <i class="bi bi-clock-history"></i>
+                        <h5>Aprende a tu ritmo</h5>
+                        <p>
+                            Accede al contenido cuando quieras y avanza según tu disponibilidad.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100">
+                        <i class="bi bi-play-circle"></i>
+                        <h5>Clases en alta calidad</h5>
+                        <p>
+                            Reproduce las lecciones las veces que necesites para reforzar tu aprendizaje.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100">
+                        <i class="bi bi-mortarboard"></i>
+                        <h5>Docentes expertos</h5>
+                        <p>
+                            Aprende con profesionales que cuentan con experiencia real en su área.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100">
+                        <i class="bi bi-chat-dots"></i>
+                        <h5>Interacción y acompañamiento</h5>
+                        <p>
+                            Resuelve dudas, comparte experiencias y recibe orientación durante tu formación.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100">
+                        <i class="bi bi-people"></i>
+                        <h5>Comunidad de aprendizaje</h5>
+                        <p>
+                            Conecta con estudiantes que comparten tus intereses y objetivos profesionales.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100">
+                        <i class="bi bi-patch-check"></i>
+                        <h5>Certificación</h5>
+                        <p>
+                            Obtén un certificado que respalde las competencias adquiridas en cada curso.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- Fin Qué esperar de nuestros cursos -->
+
+    <!-- Feed de Cursos Online -->
+    <section id="cursos-section" class="px-2 pt-3" data-aos="fade-up">
+        <div class="section-title-container">
+            <h2 class="display-6 fw-bold mb-0">Cursos y Diplomados</h2>
+            <a href="#" class="text-primary small fw-semibold text-decoration-none">Ver todos</a>
+        </div>
 
 
+        <div class="row g-2 px-2">
+            <!-- Tarjeta Curso 1 -->
+            <div class="col-6 col-md-3">
+                <div class="card feed-card border border-success border-opacity-10">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=300&q=80"
+                        class="card-img-top" alt="IA">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h3 class="feed-card-title mb-2">Diplomado Inteligencia Artificial</h3>
+                        <div class="mt-auto">
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to additional content. This content is a little bit longer.</p>
+                            <span class="card-price-badge">$120.000 COP</span>
+                            <a href="#" class="btn btn-success btn-sm w-100 btn-buy shadow-sm">Comprar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Tarjeta Curso 2 -->
+            <div class="col-6 col-md-3">
+                <div class="card feed-card border border-success border-opacity-10">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=300&q=80"
+                        class="card-img-top" alt="Seguridad">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h3 class="feed-card-title mb-2">Seguridad Industrial y BASC</h3>
+                        <div class="mt-auto">
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to additional content. This content is a little bit longer.</p>
+                            <span class="card-price-badge">$95.000 COP</span>
+                            <a href="#" class="btn btn-success btn-sm w-100 btn-buy shadow-sm">Comprar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Tarjeta Curso 2 -->
+            <div class="col-6 col-md-3">
+                <div class="card feed-card border border-success border-opacity-10">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=300&q=80"
+                        class="card-img-top" alt="Seguridad">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h3 class="feed-card-title mb-2">Seguridad Industrial y BASC</h3>
+                        <div class="mt-auto">
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to additional content. This content is a little bit longer.</p>
+                            <span class="card-price-badge">$95.000 COP</span>
+                            <a href="#" class="btn btn-success btn-sm w-100 btn-buy shadow-sm">Comprar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Tarjeta Curso 2 -->
+            <div class="col-6 col-md-3">
+                <div class="card feed-card border border-success border-opacity-10">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=300&q=80"
+                        class="card-img-top" alt="Seguridad">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h3 class="feed-card-title mb-2">Seguridad Industrial y BASC</h3>
+                        <div class="mt-auto">
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to additional content. This content is a little bit longer.</p>
+                            <span class="card-price-badge">$95.000 COP</span>
+                            <a href="#" class="btn btn-success btn-sm w-100 btn-buy shadow-sm">Comprar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin Feed de Cursos Online -->
 
     <!-- Sección de Aliados -->
-    <section class="aliados-section">
+    <section class="aliados-section" data-aos="fade-up">
         <div class="container text-center mb-4">
             <h2 class="section-title">Nuestros Aliados</h2>
             <div class="title-underline"></div>
@@ -403,8 +619,87 @@
     </section>
     <!-- Fin Sección de Aliados -->
 
+    <!-- Inicio CTA -->
+    <section class="cta-section py-5" data-aos="fade-up">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold text-white mb-3">
+                Optimiza tu experiencia hoy
+            </h2>
+
+            <p class="lead text-white-50 mb-4 mx-auto" style="max-width: 700px;">
+                Descubre todas las ventajas de nuestra plataforma y comienza a obtener
+                resultados de inmediato con una solución diseñada para impulsar tu crecimiento.
+            </p>
+
+            <a href="#" class="btn cta-btn btn-lg px-5 py-3">
+                Comenzar ahora
+            </a>
+
+            <div class="mt-4">
+                <small class="text-white-50">
+                    Sin costos ocultos • Activación inmediata • Soporte especializado
+                </small>
+            </div>
+        </div>
+    </section>
+    <!-- Fin CTA -->
+
+    <!-- Footer -->
+    <footer class="bg-white border-top py-4">
+        <div class="container">
+            <div class="row align-items-center text-center text-md-start">
+
+                <!-- Información -->
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <h6 class="fw-bold mb-1" style="color: var(--blue-main);">
+                        CECO - Centro de Educación Continua de Oriente
+                    </h6>
+                    <p class="text-muted mb-0">
+                        Calle 23 No 26-128, Soledad - Atlántico
+                    </p>
+                </div>
+
+                <!-- Enlaces -->
+                <div class="col-md-3 mb-3 mb-md-0">
+                    <nav class="nav justify-content-center">
+                        <a href="#" class="nav-link px-2 text-secondary small">Nosotros</a>
+                        <a href="#" class="nav-link px-2 text-secondary small">Políticas</a>
+                        <a href="#" class="nav-link px-2 text-secondary small">Términos</a>
+                    </nav>
+                </div>
+
+                <!-- Copyright -->
+                <div class="col-md-3 text-center text-md-end">
+                    <small class="text-muted">
+                        © 2026 CECO
+                    </small>
+                </div>
+
+            </div>
+
+            <hr class="my-3">
+
+            <div class="text-center">
+                <small class="text-muted">
+                    Todos los derechos reservados.
+                </small>
+            </div>
+        </div>
+    </footer>
+    <!-- Fin Footer -->
+
+
     <!-- Bootstrap 5.3.2 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 </body>
 
 </html>
