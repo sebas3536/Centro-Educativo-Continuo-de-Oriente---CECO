@@ -1,0 +1,19 @@
+# Archivos de entorno
+.env
+.env.local
+
+# Archivos de sistema y editor
+.DS_Store
+Thumbs.db
+
+# Archivos de caché de PHP
+*.cache
+/vendor
+node_modules
+/build
+
+# Almacenamiento de archivos y multimedia (subidas de usuario)
+/storage/uploads/*
+!/storage/uploads/.gitkeep
+/storage/uploads/programas/*
+!/storage/uploads/programas/.gitkeep

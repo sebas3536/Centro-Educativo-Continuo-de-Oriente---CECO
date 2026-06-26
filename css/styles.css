@@ -153,7 +153,7 @@ ul {
 }
 
 .hero-slide img {
-   width: 100%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
     filter: brightness(60%);
@@ -359,6 +359,7 @@ ul {
 
 #programas-section {
     background-color: var(--white);
+    padding-bottom: 2.3rem;
 }
 
 .section-title-container {
@@ -669,8 +670,8 @@ ul {
 
 .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.08);
-    border-color: rgba(30,115,190,.2);
+    box-shadow: 0 .75rem 1.5rem rgba(0, 0, 0, .08);
+    border-color: rgba(30, 115, 190, .2);
 }
 
 .feature-card i {
@@ -718,4 +719,211 @@ footer .nav-link:hover {
 
 footer h6 {
     letter-spacing: 0.3px;
+}
+
+
+
+/* Card premium */
+.login-card {
+    position: relative;
+    z-index: 1;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Icono superior */
+.icon-circle {
+    width: 56px;
+    height: 56px;
+    margin: auto;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: white;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.25);
+}
+
+/* Inputs más premium */
+.form-control {
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    padding: 12px 14px;
+    transition: all .2s ease;
+}
+
+.form-control:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+/* Botón premium */
+.btn-primary {
+    border-radius: 12px;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    border: none;
+    font-weight: 600;
+    transition: all .2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.25);
+}
+
+
+/* ── Página de todos los programas ─────────────────── */
+
+/* Hero interno */
+.programas-hero {
+    min-height: 280px;
+    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-main) 70%, var(--blue-light) 100%);
+    padding-top: 80px;
+}
+
+.programas-hero__title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.programas-hero__sub {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .programas-hero__title {
+        font-size: 2rem;
+    }
+
+    .programas-hero__sub {
+        font-size: 1.3rem;
+    }
+}
+
+/* Barra de filtro */
+.programas-filtro {
+    background: #fff;
+    border-bottom: 1px solid #e8eaf0;
+    z-index: 90;
+    top: 56px;
+    /* altura navbar */
+}
+
+.filtro-btn {
+    background: transparent;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 999px;
+    padding: 5px 16px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #495057;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filtro-btn:hover {
+    border-color: var(--blue-main);
+    color: var(--blue-main);
+}
+
+.filtro-btn.active {
+    background: var(--blue-main);
+    border-color: var(--blue-main);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Card pública de programa */
+.programa-publica-card {
+    border: none;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.07);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.programa-publica-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.13);
+}
+
+.programa-publica-card__img {
+    position: relative;
+    height: 200px;
+    background: linear-gradient(135deg, #1e3a5f, #2563eb);
+    overflow: hidden;
+}
+
+.programa-publica-card__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.programa-publica-card:hover .programa-publica-card__img img {
+    transform: scale(1.05);
+}
+
+.programa-publica-card__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.programa-publica-card__modalidad {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+}
+
+.programa-publica-card__title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--blue-dark);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.programa-publica-card__desc {
+    font-size: 1.3rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.programa-publica-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 1.2rem;
+    color: #6b7280;
+}
+
+.programa-publica-card__meta span {
+    background: #f3f4f6;
+    border-radius: 6px;
+    padding: 3px 10px;
 }

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <!-- Hoja de estilos -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/../../css/styles.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +46,8 @@
                         <a class="nav-link" href="#">Cursos</a>
                         <a class="nav-link" href="#">Noticias</a>
                         <a class="nav-link" href="#">Contactenos</a>
-                        <a class="ms-lg-3 btn btn-contacto align-self-center" href="#">Login</a>
+                        <a class="ms-lg-3 btn btn-contacto align-self-center"
+                            href="../resources/views/auth/login.php">Login</a>
                     </div>
                 </div>
             </div>
@@ -54,67 +55,92 @@
     </header>
     <!-- Fin Header -->
 
-    <!-- BANNER PUBLICITARIO DE ENTRADA -->
-    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+        <!-- BANNER PUBLICITARIO DE ENTRADA -->
+<div id="heroCarousel" class="carousel slide carousel-fade"
+     data-bs-ride="carousel"
+     data-bs-interval="5000">
 
-        <!-- Slides -->
-        <div class="carousel-inner">
+    <div class="carousel-inner">
 
-            <!-- Slide 1 -->
+        <?php if (!empty($programasSlider)): ?>
+
+            <?php foreach ($programasSlider as $indice => $slide): ?>
+                <div class="carousel-item <?= $indice === 0 ? 'active' : '' ?> hero-slide">
+
+                    <img
+                        src="/<?= htmlspecialchars($slide['ruta_archivo']) ?>"
+                        class="d-block w-100"
+                        alt="<?= htmlspecialchars($slide['titulo']) ?>"
+                    >
+
+                    <div class="hero-content">
+                        <h1><?= htmlspecialchars($slide['titulo']) ?></h1>
+
+                        <?php if (!empty($slide['descripcion_corta'])): ?>
+                            <p><?= htmlspecialchars($slide['descripcion_corta']) ?></p>
+                        <?php endif; ?>
+
+                        <div class="hero-buttons">
+                            <a href="?page=programa&id=<?= $slide['id'] ?>"
+                               class="btn btn-primary btn-lg">
+                                Ver programa
+                            </a>
+                            <a href="#programas-section"
+                               class="btn btn-outline-light btn-lg">
+                                Ver todos
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            <?php endforeach; ?>
+
+        <?php else: ?>
+
+            <!-- Fallback estático si no hay programas destacados con imagen -->
             <div class="carousel-item active hero-slide">
-                <img src="img/Mercadeo.png" class="d-block w-100" alt="Slide 1">
-
+                <img src="img/Mercadeo.png" class="d-block w-100" alt="CECO">
                 <div class="hero-content">
-                    <h1>Conviértete en un experto en Marketing Digital</h1>
-                    <p>Crea campañas efectivas y aprende a vender en el mundo digital</p>
-
+                    <h1>Bienvenido a CECO</h1>
+                    <p>Formamos profesionales con excelencia académica</p>
                     <div class="hero-buttons">
-                        <a href="#" class="btn btn-primary btn-lg">Ver programa</a>
-                        <a href="#" class="btn btn-outline-light btn-lg">Comenzar hoy</a>
+                        <a href="#programas-section" class="btn btn-primary btn-lg">
+                            Ver programas
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Slide 2 -->
-            <div class="carousel-item hero-slide">
-                <img src="img/industrual.png" class="d-block w-100" alt="Slide 2">
+        <?php endif; ?>
 
-                <div class="hero-content">
-                    <h1>Conviértete en guardián de la seguridad industrial</h1>
-                    <p>Diseña, implementa y supervisa sistemas de seguridad en empresas</p>
+    </div>
 
-                    <div class="hero-buttons">
-                        <a href="#" class="btn btn-primary btn-lg">Ver programa académico</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="carousel-item hero-slide">
-                <img src="img/Cocina.png" class="d-block w-100" alt="Slide 3">
-
-                <div class="hero-content">
-                    <h1>Conviértete en un chef profesional</h1>
-                    <p>Aprende las técnicas culinarias más avanzadas y sorprende a tus clientes</p>
-
-                    <div class="hero-buttons">
-                        <a href="#" class="btn btn-primary btn-lg">Quiero estudiar cocina</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Controles -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <!-- Controles — solo si hay más de 1 slide -->
+    <?php if (count($programasSlider) > 1): ?>
+        <button class="carousel-control-prev" type="button"
+                data-bs-target="#heroCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
         </button>
-
-        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <button class="carousel-control-next" type="button"
+                data-bs-target="#heroCarousel" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
         </button>
-    </div>
-    <!-- Fin BANNER PUBLICITARIO DE ENTRADA -->
+
+        <!-- Indicadores de posición -->
+        <div class="carousel-indicators">
+            <?php foreach ($programasSlider as $i => $_): ?>
+                <button type="button"
+                        data-bs-target="#heroCarousel"
+                        data-bs-slide-to="<?= $i ?>"
+                        <?= $i === 0 ? 'class="active" aria-current="true"' : '' ?>
+                        aria-label="Slide <?= $i + 1 ?>">
+                </button>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+
+</div>
+<!-- Fin BANNER PUBLICITARIO DE ENTRADA -->
 
     <!-- Eslogan Cohesivo -->
     <div class="eslogan-container" data-aos="fade-up">
@@ -271,47 +297,42 @@
             <h2 class="display-6 fw-bold mb-0">
                 Nuestros Programas
             </h2>
-            <a href="#" class="text-primary small fw-semibold text-decoration-none">
-                Ver todos
-            </a>
+           <a href="?page=programas" class="text-primary small fw-semibold text-decoration-none">Ver todos</a>
         </div>
-        <div class="row g-2 px-2">
+        <div class="row g-2 px-2 mt-4">
 
-            <div class="col-6 col-md-3">
-                <div class="card feed-card">
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
-                    <div class="card-body">
-                        <div class="feed-card-title">Logística</div>
-                    </div>
-                </div>
-            </div>
+            <?php if (!empty($programasDestacados)): ?>
 
-            <div class="col-6 col-md-3">
-                <div class="card feed-card">
-                    <img src="https://images.unsplash.com/photo-1555243896-c709bfa0b564">
-                    <div class="card-body">
-                        <div class="feed-card-title">Software</div>
-                    </div>
-                </div>
-            </div>
+                <?php foreach ($programasDestacados as $programa): ?>
+                    <div class="col-6 col-md-3">
+                        <div class="card feed-card">
 
-            <div class="col-6 col-md-3">
-                <div class="card feed-card">
-                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d">
-                    <div class="card-body">
-                        <div class="feed-card-title">Cocina</div>
-                    </div>
-                </div>
-            </div>
+                            <?php if (!empty($programa['ruta_archivo'])): ?>
+                                <img src="/<?= htmlspecialchars($programa['ruta_archivo']) ?>"
+                                    alt="<?= htmlspecialchars($programa['titulo']) ?>" class="card-img-top">
+                            <?php else: ?>
+                                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&q=80"
+                                    alt="<?= htmlspecialchars($programa['titulo']) ?>" class="card-img-top">
+                            <?php endif; ?>
 
-            <div class="col-6 col-md-3">
-                <div class="card feed-card">
-                    <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3">
-                    <div class="card-body">
-                        <div class="feed-card-title">Infancia</div>
+                            <div class="card-body">
+                                <div class="feed-card-title">
+                                    <?= htmlspecialchars($programa['titulo']) ?>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
+                <?php endforeach; ?>
+
+            <?php else: ?>
+                <div class="col-12 text-center py-4 text-muted">
+                    <i class="bi bi-journal-x fs-2 d-block mb-2"></i>
+                    Próximamente nuevos programas.
                 </div>
-            </div>
+            <?php endif; ?>
+
+        </div>
     </section>
     <!-- Fin del feed de Programas Académicos -->
 
@@ -401,78 +422,52 @@
     <section id="cursos-section" class="px-2 pt-3" data-aos="fade-up">
         <div class="section-title-container">
             <h2 class="display-6 fw-bold mb-0">Cursos y Diplomados</h2>
-            <a href="#" class="text-primary small fw-semibold text-decoration-none">Ver todos</a>
+           <a href="?page=programas" class="text-primary small fw-semibold text-decoration-none">Ver todos</a>
         </div>
 
 
         <div class="row g-2 px-2">
-            <!-- Tarjeta Curso 1 -->
-            <div class="col-6 col-md-3">
-                <div class="card feed-card border border-success border-opacity-10">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=300&q=80"
-                        class="card-img-top" alt="IA">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <h3 class="feed-card-title mb-2">Diplomado Inteligencia Artificial</h3>
-                        <div class="mt-auto">
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to additional content. This content is a little bit longer.</p>
-                            <span class="card-price-badge">$120.000 COP</span>
-                            <a href="#" class="btn btn-success btn-sm w-100 btn-buy shadow-sm">Comprar Ahora</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Tarjeta Curso 2 -->
-            <div class="col-6 col-md-3">
-                <div class="card feed-card border border-success border-opacity-10">
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=300&q=80"
-                        class="card-img-top" alt="Seguridad">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <h3 class="feed-card-title mb-2">Seguridad Industrial y BASC</h3>
-                        <div class="mt-auto">
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to additional content. This content is a little bit longer.</p>
-                            <span class="card-price-badge">$95.000 COP</span>
-                            <a href="#" class="btn btn-success btn-sm w-100 btn-buy shadow-sm">Comprar Ahora</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php if (!empty($programasDestacados)): ?>
 
-            <!-- Tarjeta Curso 2 -->
-            <div class="col-6 col-md-3">
-                <div class="card feed-card border border-success border-opacity-10">
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=300&q=80"
-                        class="card-img-top" alt="Seguridad">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <h3 class="feed-card-title mb-2">Seguridad Industrial y BASC</h3>
-                        <div class="mt-auto">
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to additional content. This content is a little bit longer.</p>
-                            <span class="card-price-badge">$95.000 COP</span>
-                            <a href="#" class="btn btn-success btn-sm w-100 btn-buy shadow-sm">Comprar Ahora</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <?php foreach ($programasDestacados as $programa): ?>
+                    <div class="col-6 col-md-3">
+                        <div class="card feed-card border border-success border-opacity-10">
 
-            <!-- Tarjeta Curso 2 -->
-            <div class="col-6 col-md-3">
-                <div class="card feed-card border border-success border-opacity-10">
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=300&q=80"
-                        class="card-img-top" alt="Seguridad">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <h3 class="feed-card-title mb-2">Seguridad Industrial y BASC</h3>
-                        <div class="mt-auto">
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to additional content. This content is a little bit longer.</p>
-                            <span class="card-price-badge">$95.000 COP</span>
-                            <a href="#" class="btn btn-success btn-sm w-100 btn-buy shadow-sm">Comprar Ahora</a>
+                            <?php if (!empty($programa['ruta_archivo'])): ?>
+                                <img src="/<?= htmlspecialchars($programa['ruta_archivo']) ?>" class="card-img-top"
+                                    alt="<?= htmlspecialchars($programa['titulo']) ?>">
+                            <?php else: ?>
+                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=300&q=80"
+                                    class="card-img-top" alt="<?= htmlspecialchars($programa['titulo']) ?>">
+                            <?php endif; ?>
+
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <h3 class="feed-card-title mb-2">
+                                    <?= htmlspecialchars($programa['titulo']) ?>
+                                </h3>
+                                <div class="mt-auto">
+                                    <p class="card-text text-muted small">
+                                        <?= htmlspecialchars($programa['descripcion_corta'] ?? '') ?>
+                                    </p>
+                                    <a href="?page=programa&id=<?= $programa['id'] ?>"
+                                        class="btn btn-success btn-sm w-100 btn-buy shadow-sm">
+                                        Ver programa
+                                    </a>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
+                <?php endforeach; ?>
+
+            <?php else: ?>
+                <div class="col-12 text-center py-4 text-muted">
+                    <i class="bi bi-journal-x fs-2 d-block mb-2"></i>
+                    No hay cursos disponibles en este momento.
                 </div>
-            </div>
+            <?php endif; ?>
+
         </div>
     </section>
     <!-- Fin Feed de Cursos Online -->
@@ -643,6 +638,8 @@
         </div>
     </section>
     <!-- Fin CTA -->
+
+    
 
     <!-- Footer -->
     <footer class="bg-white border-top py-4">
