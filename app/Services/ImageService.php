@@ -61,12 +61,19 @@ class ImageService
 
     private function resizeAndSave(string $tmpPath, string $mime, string $destPath): void
     {
-        $source = match ($mime) {
-            'image/jpeg' => imagecreatefromjpeg($tmpPath),
-            'image/png' => imagecreatefrompng($tmpPath),
-            'image/webp' => imagecreatefromwebp($tmpPath),
-            default => throw new Exception('Tipo MIME no soportado para procesamiento.')
-        };
+        switch ($mime) {
+            case 'image/jpeg':
+                $source = imagecreatefromjpeg($tmpPath);
+                break;
+            case 'image/png':
+                $source = imagecreatefrompng($tmpPath);
+                break;
+            case 'image/webp':
+                $source = imagecreatefromwebp($tmpPath);
+                break;
+            default:
+                throw new Exception('Tipo MIME no soportado para procesamiento.');
+        }
 
         [$origWidth, $origHeight] = getimagesize($tmpPath);
 

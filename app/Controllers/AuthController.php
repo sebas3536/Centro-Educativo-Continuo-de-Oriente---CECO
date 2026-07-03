@@ -3,7 +3,12 @@ require_once __DIR__ . '/../Models/Usuario.php';
 
 class AuthController
 {
-    public static function login(string $email, string $password): true|string
+    /**
+     * @param string $email
+     * @param string $password
+     * @return bool|string
+     */
+    public static function login(string $email, string $password)
     {
         $genericError = "Credenciales inválidas";
 

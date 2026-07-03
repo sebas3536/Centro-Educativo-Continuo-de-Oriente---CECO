@@ -35,8 +35,11 @@ class Programa
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    /* Obtener multimedia por programa */
-    public static function find($id): array|false
+    /**
+     * @param mixed $id
+     * @return array|false
+     */
+    public static function find($id)
     {
         $stmt = self::db()->prepare("
         SELECT p.*,
@@ -52,8 +55,11 @@ class Programa
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    /* Crear */
-    public static function create(array $data): array|false
+    /**
+     * @param array $data
+     * @return array|false
+     */
+    public static function create(array $data)
     {
         $db = self::db();
         $estado = self::normalizeEstado($data['estado'] ?? null);

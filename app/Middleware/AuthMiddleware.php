@@ -22,7 +22,11 @@ class AuthMiddleware
         $_SESSION['last_activity'] = time();
     }
 
-    private static function deny(string $reason = 'unauth'): never
+    /**
+     * @param string $reason
+     * @return never
+     */
+    private static function deny(string $reason = 'unauth'): void
     {
         session_unset();
         session_destroy();
