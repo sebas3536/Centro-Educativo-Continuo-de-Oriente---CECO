@@ -11,7 +11,7 @@ switch ($page) {
         require_once '../app/Controllers/AuthController.php';
         AuthController::logout();
         break;
-//Admin
+    //Admin
     case 'admin_dashboard':
         require_once '../app/Middleware/AuthMiddleware.php';
         require_once '../app/Middleware/RoleMiddleware.php';
@@ -25,14 +25,14 @@ switch ($page) {
         RoleMiddleware::requireAdmin();
         require '../resources/views/admin/programas/programas.php';
         break;
-        
+
     case 'admin_multimedia':
         require_once '../app/Middleware/AuthMiddleware.php';
         require_once '../app/Middleware/RoleMiddleware.php';
         RoleMiddleware::requireAdmin();
         require '../resources/views/admin/multimedia.php';
         break;
-//Editor
+    //Editor
     case 'editor_dashboard':
         require_once '../app/Middleware/AuthMiddleware.php';
         require_once '../app/Middleware/RoleMiddleware.php';
@@ -41,9 +41,9 @@ switch ($page) {
         break;
 
 
-    
-        
-        
+
+
+
     default:
         require '../resources/views/frontend/home.php';
         break;

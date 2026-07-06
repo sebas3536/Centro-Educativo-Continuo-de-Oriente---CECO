@@ -1,7 +1,6 @@
 <?php
 define('BASE_URL', '');
 
-require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/config/connection.php';
 require_once __DIR__ . '/app/Middleware/AuthMiddleware.php';
 require_once __DIR__ . '/app/Middleware/RoleMiddleware.php';

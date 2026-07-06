@@ -1,9 +1,14 @@
 <?php
-require_once __DIR__ . '/../vendor/autoload.php';
-
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
-$dotenv->load();
+$envPath = __DIR__ . '/../.env.php';
+if (file_exists($envPath)) {
+    $env = require $envPath;
+    if (is_array($env)) {
+        foreach ($env as $key => $value) {
+            $_ENV[$key] = $value;
+            $_SERVER[$key] = $value;
+        }
+    }
+}
 
 class Database
 {
