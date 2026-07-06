@@ -34,7 +34,7 @@ Debes inicializar la estructura y las relaciones en MySQL.
 2. Crea una nueva base de datos llamada `ceco`.
 3. Ejecuta el siguiente script SQL para crear las tablas y poblar los roles y usuarios por defecto:
 
-  
+    
 
 ```sql
 
