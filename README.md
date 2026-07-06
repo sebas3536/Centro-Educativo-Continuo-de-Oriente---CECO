@@ -1,40 +1,29 @@
 
 # Centro Educativo Continuo de Oriente - CECO
-
-  
-Instalación, configuración de la base de datos, la ejecución del proyecto y las pautas para subirlo correctamente a Git.
-
  
 ---
 ## Instalación y Configuración
 
-### 1. Instalar las dependencias de PHP
+### 1. Configurar las variables de entorno
 
-Las dependencias externas (como el lector de variables de entorno `.env`) se gestionan con Composer. Ejecuta el siguiente comando en la raíz del proyecto para descargar e instalar la carpeta `vendor`:
-
-```bash
-composer  install
-```
-
-  
-
-### 2. Configurar las variables de entorno
-
-1. Copia el archivo de plantilla `.env.example` y renombralo como `.env`:
+1. Copia el archivo de plantilla `.env.example.php` y renómbralo como `.env.php`:
 
 ```bash
-cp .env.example .env
+cp .env.example.php .env.php
 ```
 
-2. Abre el archivo `.env` recién creado en un editor de texto y configura las credenciales de tu base de datos local:
+2. Abre el archivo `.env.php` recién creado en un editor de texto y configura las credenciales de tu base de datos local:
 
-```env
-DB_HOST=localhost
-DB_NAME=ceco
-DB_USER=root
-DB_PASS=tu_contraseña_de_mysql
+```php
+<?php
+// Configuración de la aplicación
+return [
+    'DB_HOST' => 'localhost',
+    'DB_NAME' => 'ceco',
+    'DB_USER' => 'root',
+    'DB_PASS' => 'tu_contraseña_de_mysql',
+];
 ```
-
   
 
 ### 3. Configurar e importar la Base de Datos
