@@ -15,10 +15,10 @@ unset($_SESSION['multimedia_error'], $_SESSION['multimedia_ok']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Imágenes — CECO</title>
-    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="css/normalize.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 <body class="programa-body">
 
