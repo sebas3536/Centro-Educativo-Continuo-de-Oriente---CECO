@@ -22,7 +22,7 @@
 
     <!-- BACKGROUND LAYER -->
 
-    <a href="/index.php" class="btn btn-link text-decoration-none position-absolute m-2">
+    <a href="?page=homew" class="btn btn-link text-decoration-none position-absolute m-2">
         <i class="bi bi-arrow-left fs-4"></i>
     </a>
 
@@ -50,7 +50,7 @@
                 <!-- BODY -->
                 <div class="card-body px-4 py-4">
 
-                    <form method="POST" action="/index.php?page=login_process">
+                    <form method="POST" action="?page=login_process">
 
                         <!-- EMAIL -->
                         <div class="mb-3">

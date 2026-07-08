@@ -22,7 +22,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/index.php">
+                <a class="navbar-brand" href="?page=index">
                     <img src="/img/logo.png" alt="Logo CECO" style="max-height:40px; width:auto;" class="img-fluid">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -36,7 +36,7 @@
                         <a class="nav-link active" href="?page=programas">Cursos</a>
                         <a class="nav-link" href="#">Noticias</a>
                         <a class="nav-link" href="#">Contáctenos</a>
-                        <a class="ms-lg-3 btn btn-contacto align-self-center" href="/index.php?page=login">Login</a>
+                        <a class="ms-lg-3 btn btn-contacto align-self-center" href="?page=login">Login</a>
                     </div>
                 </div>
             </div>

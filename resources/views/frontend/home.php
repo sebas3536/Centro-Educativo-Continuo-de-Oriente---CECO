@@ -47,7 +47,7 @@
                         <a class="nav-link" href="#">Noticias</a>
                         <a class="nav-link" href="#">Contactenos</a>
                         <a class="ms-lg-3 btn btn-contacto align-self-center"
-                            href="../resources/views/auth/login.php">Login</a>
+                            href="?page=login">Login</a>
                     </div>
                 </div>
             </div>
