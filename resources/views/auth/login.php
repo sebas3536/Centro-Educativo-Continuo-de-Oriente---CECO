@@ -22,7 +22,7 @@
 
     <!-- BACKGROUND LAYER -->
 
-    <a href="?page=homew" class="btn btn-link text-decoration-none position-absolute m-2">
+    <a href="?page=home" class="btn btn-link text-decoration-none position-absolute m-2">
         <i class="bi bi-arrow-left fs-4"></i>
     </a>
 

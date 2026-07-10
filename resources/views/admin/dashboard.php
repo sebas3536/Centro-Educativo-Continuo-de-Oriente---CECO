@@ -117,7 +117,7 @@ $programas = Programa::getall();
                 </div>
 
                 <div class="col-6 col-md-4">
-                    <a href="/public/index.php?page=multimedia&action=subir"
+                    <a href="?page=multimedia&action=subir"
                         class="card text-decoration-none text-primary p-3 d-flex flex-column align-items-center gap-2 text-center h-100 action-card">
                         <i class="bi bi-cloud-upload fs-3"></i>
                         <span>Subir foto</span>
@@ -125,7 +125,7 @@ $programas = Programa::getall();
                 </div>
 
                 <div class="col-6 col-md-4">
-                    <a href="/public/index.php?page=usuarios"
+                    <a href="?page=usuarios"
                         class="card text-decoration-none text-primary p-3 d-flex flex-column align-items-center gap-2 text-center h-100 action-card">
                         <i class="bi bi-person-plus fs-3"></i>
                         <span>Gestionar usuarios</span>

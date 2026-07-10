@@ -7,7 +7,7 @@ function navItem(string $page, string $icon, string $label, string $current): st
     return "
     <li class='nav-item'>
         <a class='nav-link d-flex align-items-center gap-3 px-3 py-3 mb-1 rounded {$active}'
-           href='/index.php?page={$page}'>
+           href='?page={$page}'>
             <i class='bi {$icon}'></i>
             <span class='nav-label'>{$label}</span>
         </a>
@@ -43,7 +43,7 @@ function navItem(string $page, string $icon, string $label, string $current): st
                 <span class="user-role d-block text-muted"><?= htmlspecialchars($_SESSION['user']['rol']) ?></span>
             </div>
         </div>
-        <a href="/index.php?page=logout"
+        <a href="?page=logout"
             class="btn-logout nav-label d-flex align-items-center gap-2 text-danger text-decoration-none rounded px-1 py-1"
             title="Cerrar sesión">
             <i class="bi bi-box-arrow-right"></i>
