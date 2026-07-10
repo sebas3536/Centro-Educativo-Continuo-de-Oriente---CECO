@@ -17,7 +17,7 @@ function navItem(string $page, string $icon, string $label, string $current): st
 <aside id="sidebar"
     class="sidebar d-flex flex-column position-fixed top-0 start-0 vh-100 overflow-hidden border-end bg-white">
     <div class="sidebar-header d-flex align-items-center justify-content-between p-3 border-bottom">
-        <img src="/img/logo.png" alt="CECO" class="sidebar-logo img-fluid">
+        <img src="<?= BASE_URL ?>img/logo.png" alt="CECO" class="sidebar-logo img-fluid">
         <button class="btn btn-light rounded-circle shadow-sm" id="sidebarToggle" aria-label="Colapsar menú">
             <i class="bi bi-layout-sidebar-reverse"></i>
         </button>

@@ -71,7 +71,7 @@ $programas = Programa::getAll();
                             <div class="position-relative prog-card__img">
 
                                 <?php if (!empty($programa['imagen_principal'])): ?>
-                                    <img src="/<?= htmlspecialchars($programa['imagen_principal']) ?>"
+                                    <img src="<?= BASE_URL . htmlspecialchars($programa['imagen_principal']) ?>"
                                         alt="<?= htmlspecialchars($programa['titulo']) ?>">
                                 <?php else: ?>
                                     <div class="prog-card__img-placeholder">

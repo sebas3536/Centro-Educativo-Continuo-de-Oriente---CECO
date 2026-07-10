@@ -169,7 +169,7 @@ unset($_SESSION['multimedia_error'], $_SESSION['multimedia_ok']);
 
                                     <!-- Imagen -->
                                     <div class="media-card__img">
-                                        <img src="/<?= htmlspecialchars($foto['ruta_archivo']) ?>"
+                                        <img src="<?= BASE_URL . htmlspecialchars($foto['ruta_archivo']) ?>"
                                              alt="<?= htmlspecialchars($foto['nombre_original'] ?? '') ?>">
 
                                         <?php if ($foto['es_principal']): ?>
@@ -200,7 +200,7 @@ unset($_SESSION['multimedia_error'], $_SESSION['multimedia_ok']);
                                                     data-id="<?= $foto['id'] ?>"
                                                     data-orden="<?= $foto['orden'] ?>"
                                                     data-principal="<?= $foto['es_principal'] ?>"
-                                                    data-src="/<?= htmlspecialchars($foto['ruta_archivo']) ?>"
+                                                    data-src="<?= BASE_URL . htmlspecialchars($foto['ruta_archivo']) ?>"
                                                     title="Editar">
                                                 <i class="bi bi-pencil"></i>
                                             </button>

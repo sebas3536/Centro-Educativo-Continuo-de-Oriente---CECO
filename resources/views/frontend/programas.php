@@ -23,14 +23,14 @@
         <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="?page=index">
-                    <img src="/img/logo.png" alt="Logo CECO" style="max-height:40px; width:auto;" class="img-fluid">
+                    <img src="<?= BASE_URL ?>img/logo.png" alt="Logo CECO" style="max-height:40px; width:auto;" class="img-fluid">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <div class="navbar-nav ms-auto">
-                        <a class="nav-link" href="/index.php">Inicio</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>index.php">Inicio</a>
                         <a class="nav-link" href="#">Institución</a>
                         <a class="nav-link active" href="?page=programas">Técnico Laboral</a>
                         <a class="nav-link active" href="?page=programas">Cursos</a>
@@ -49,7 +49,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="/index.php" class="text-white text-decoration-none opacity-75">Inicio</a>
+                        <a href="<?= BASE_URL ?>index.php" class="text-white text-decoration-none opacity-75">Inicio</a>
                     </li>
                     <li class="breadcrumb-item active text-white">Programas</li>
                 </ol>
@@ -98,7 +98,7 @@
                             <!-- Imagen -->
                             <div class="programa-publica-card__img">
                                 <?php if (!empty($programa['ruta_archivo'])): ?>
-                                    <img src="/<?= htmlspecialchars($programa['ruta_archivo']) ?>"
+                                    <img src="<?= BASE_URL . htmlspecialchars($programa['ruta_archivo']) ?>"
                                         alt="<?= htmlspecialchars($programa['titulo']) ?>">
                                 <?php else: ?>
                                     <div class="programa-publica-card__placeholder">

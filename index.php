@@ -1,5 +1,13 @@
 <?php
-define('BASE_URL', '');
+$scriptName = $_SERVER['SCRIPT_NAME'] ?? $_SERVER['PHP_SELF'] ?? '';
+$baseDir = dirname($scriptName);
+$baseDir = str_replace('\\', '/', $baseDir);
+if ($baseDir === '/' || $baseDir === '\\' || $baseDir === '') {
+    $baseDir = '/';
+} else {
+    $baseDir = rtrim($baseDir, '/') . '/';
+}
+define('BASE_URL', $baseDir);
 
 require_once __DIR__ . '/config/connection.php';
 require_once __DIR__ . '/app/Middleware/AuthMiddleware.php';

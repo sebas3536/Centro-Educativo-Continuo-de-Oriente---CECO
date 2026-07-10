@@ -6,7 +6,7 @@ $imagenActual = $programa['imagen_principal'] ?? null;
 <!-- Zona de preview -->
 <div class="img-upload-preview mb-3" id="previewZone">
     <?php if ($imagenActual): ?>
-        <img src="/<?= htmlspecialchars($imagenActual) ?>" alt="Imagen actual" id="previewImg" class="img-preview-actual">
+        <img src="<?= BASE_URL . htmlspecialchars($imagenActual) ?>" alt="Imagen actual" id="previewImg" class="img-preview-actual">
         <div class="img-preview-badge">
             <i class="bi bi-star-fill me-1"></i>Imagen actual
         </div>

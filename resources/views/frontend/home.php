@@ -30,8 +30,8 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-custom fixed-top ">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
-                    <img src="img/logo.png" alt="Logo CECO" style="max-height: 40px; width: auto;" class="img-fluid">
+                <a class="navbar-brand" href="<?= BASE_URL ?>index.php">
+                    <img src="<?= BASE_URL ?>img/logo.png" alt="Logo CECO" style="max-height: 40px; width: auto;" class="img-fluid">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
@@ -40,7 +40,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto ">
-                        <a class="nav-link active" aria-current="page" href="index.html">Inicio </a>
+                        <a class="nav-link active" aria-current="page" href="<?= BASE_URL ?>index.php">Inicio </a>
                         <a class="nav-link" href="#">Institucion</a>
                         <a class="nav-link" href="#">Tecnico Laboral</a>
                         <a class="nav-link" href="#">Cursos</a>
@@ -68,7 +68,7 @@
                 <div class="carousel-item <?= $indice === 0 ? 'active' : '' ?> hero-slide">
 
                     <img
-                        src="/<?= htmlspecialchars($slide['ruta_archivo']) ?>"
+                        src="<?= BASE_URL . htmlspecialchars($slide['ruta_archivo']) ?>"
                         class="d-block w-100"
                         alt="<?= htmlspecialchars($slide['titulo']) ?>"
                     >
@@ -308,7 +308,7 @@
                         <div class="card feed-card">
 
                             <?php if (!empty($programa['ruta_archivo'])): ?>
-                                <img src="/<?= htmlspecialchars($programa['ruta_archivo']) ?>"
+                                <img src="<?= BASE_URL . htmlspecialchars($programa['ruta_archivo']) ?>"
                                     alt="<?= htmlspecialchars($programa['titulo']) ?>" class="card-img-top">
                             <?php else: ?>
                                 <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&q=80"
@@ -435,7 +435,7 @@
                         <div class="card feed-card border border-success border-opacity-10">
 
                             <?php if (!empty($programa['ruta_archivo'])): ?>
-                                <img src="/<?= htmlspecialchars($programa['ruta_archivo']) ?>" class="card-img-top"
+                                <img src="<?= BASE_URL . htmlspecialchars($programa['ruta_archivo']) ?>" class="card-img-top"
                                     alt="<?= htmlspecialchars($programa['titulo']) ?>">
                             <?php else: ?>
                                 <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=300&q=80"
