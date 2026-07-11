@@ -8,6 +8,7 @@ class HomeController
     {
         $todos = Programa::getDestacados();
         $programasDestacados = array_slice($todos, 0, 4);
+        $cursosDestacados    = array_slice($todos, 4, 4);
 
         $programasSlider = array_filter(
             $todos,

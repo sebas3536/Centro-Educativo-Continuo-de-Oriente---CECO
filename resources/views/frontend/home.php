@@ -428,9 +428,9 @@
 
         <div class="row g-2 px-2">
 
-            <?php if (!empty($programasDestacados)): ?>
+            <?php if (!empty($cursosDestacados)): ?>
 
-                <?php foreach ($programasDestacados as $programa): ?>
+                <?php foreach ($cursosDestacados as $programa): ?>
                     <div class="col-6 col-md-3">
                         <div class="card feed-card border border-success border-opacity-10">
 
