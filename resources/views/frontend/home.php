@@ -86,7 +86,7 @@
     <!-- ==================================================== -->
     <script>
     (function() {
-        var mobileUrl = "https://ceco.edu.co/index_new.php";
+        var mobileUrl = "https://ceco.edu.co/sities/Movil/index_new.php";
         var resizeTimeout;
 
         function checkAndRedirect() {
