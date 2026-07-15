@@ -23,9 +23,98 @@
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
+    <style>
+        /* Estilos para ocultar la imagen del banner en móviles Y TAMBIÉN si el script falla */
+        @media (max-width: 768px) {
+            .hero-slide img {
+                display: none !important;
+            }
+            
+            .hero-slide .hero-content {
+                background: linear-gradient(135deg, #0056b3 0%, #003d80 100%);
+                min-height: 50vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding: 2rem 1rem;
+                width: 100%;
+            }
+
+            .hero-slide .hero-content h1 {
+                font-size: 1.8rem;
+                color: #fff;
+                margin-bottom: 1rem;
+            }
+
+            .hero-slide .hero-content p {
+                color: rgba(255,255,255,0.9);
+                font-size: 1rem;
+                max-width: 90%;
+            }
+
+            .hero-slide .hero-buttons .btn {
+                font-size: 0.9rem;
+                padding: 0.5rem 1.5rem;
+            }
+
+            .carousel-indicators {
+                bottom: 10px;
+            }
+        }
+
+        /* Estilo para mantener el header limpio en móviles */
+        @media (max-width: 768px) {
+            .navbar-custom {
+                background: #ffffff !important;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            .navbar-custom .navbar-brand img {
+                max-height: 30px !important;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
+
+    <!-- ==================================================== -->
+    <!-- SCRIPT DE REDIRECCIÓN MÓVIL - VERSIÓN CORREGIDA      -->
+    <!-- ==================================================== -->
+    <script>
+    (function() {
+        var mobileUrl = "https://ceco.edu.co/index_new.html";
+        var resizeTimeout;
+
+        function checkAndRedirect() {
+            var isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone|Opera Mini|IEMobile/i.test(navigator.userAgent);
+            var isSmallScreen = window.innerWidth <= 768;
+
+            if (isMobile || isSmallScreen) {
+                // Evita redirigir si ya estamos en la URL móvil
+                if (window.location.href.indexOf(mobileUrl) === -1) {
+                    window.location.href = mobileUrl;
+                }
+            }
+        }
+
+        // Chequeo inicial al cargar
+        checkAndRedirect();
+
+        // Chequeo en vivo al redimensionar (con debounce de 200ms)
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(checkAndRedirect, 200);
+        });
+    })();
+</script>
+    <!-- ==================================================== -->
+    <!-- FIN SCRIPT DE REDIRECCIÓN                            -->
+    <!-- ==================================================== -->
+
     <!-- Inicio Header -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-custom fixed-top ">
@@ -55,92 +144,92 @@
     </header>
     <!-- Fin Header -->
 
-        <!-- BANNER PUBLICITARIO DE ENTRADA -->
-<div id="heroCarousel" class="carousel slide carousel-fade"
-     data-bs-ride="carousel"
-     data-bs-interval="5000">
+    <!-- BANNER PUBLICITARIO DE ENTRADA -->
+    <div id="heroCarousel" class="carousel slide carousel-fade"
+         data-bs-ride="carousel"
+         data-bs-interval="5000">
 
-    <div class="carousel-inner">
+        <div class="carousel-inner">
 
-        <?php if (!empty($programasSlider)): ?>
+            <?php if (!empty($programasSlider)): ?>
 
-            <?php foreach ($programasSlider as $indice => $slide): ?>
-                <div class="carousel-item <?= $indice === 0 ? 'active' : '' ?> hero-slide">
+                <?php foreach ($programasSlider as $indice => $slide): ?>
+                    <div class="carousel-item <?= $indice === 0 ? 'active' : '' ?> hero-slide">
 
-                    <img
-                        src="<?= BASE_URL . htmlspecialchars($slide['ruta_archivo']) ?>"
-                        class="d-block w-100"
-                        alt="<?= htmlspecialchars($slide['titulo']) ?>"
-                    >
+                        <img
+                            src="<?= BASE_URL . htmlspecialchars($slide['ruta_archivo']) ?>"
+                            class="d-block w-100"
+                            alt="<?= htmlspecialchars($slide['titulo']) ?>"
+                        >
 
+                        <div class="hero-content">
+                            <h1><?= htmlspecialchars($slide['titulo']) ?></h1>
+
+                            <?php if (!empty($slide['descripcion_corta'])): ?>
+                                <p><?= htmlspecialchars($slide['descripcion_corta']) ?></p>
+                            <?php endif; ?>
+
+                            <div class="hero-buttons">
+                                <a href="?page=programa&id=<?= $slide['id'] ?>"
+                                   class="btn btn-primary btn-lg">
+                                    Ver programa
+                                </a>
+                                <a href="#programas-section"
+                                   class="btn btn-outline-light btn-lg">
+                                    Ver todos
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                <?php endforeach; ?>
+
+            <?php else: ?>
+
+                <!-- Fallback estático si no hay programas destacados con imagen -->
+                <div class="carousel-item active hero-slide">
+                    <img src="img/Mercadeo.png" class="d-block w-100" alt="CECO">
                     <div class="hero-content">
-                        <h1><?= htmlspecialchars($slide['titulo']) ?></h1>
-
-                        <?php if (!empty($slide['descripcion_corta'])): ?>
-                            <p><?= htmlspecialchars($slide['descripcion_corta']) ?></p>
-                        <?php endif; ?>
-
+                        <h1>Bienvenido a CECO</h1>
+                        <p>Formamos profesionales con excelencia académica</p>
                         <div class="hero-buttons">
-                            <a href="?page=programa&id=<?= $slide['id'] ?>"
-                               class="btn btn-primary btn-lg">
-                                Ver programa
-                            </a>
-                            <a href="#programas-section"
-                               class="btn btn-outline-light btn-lg">
-                                Ver todos
+                            <a href="#programas-section" class="btn btn-primary btn-lg">
+                                Ver programas
                             </a>
                         </div>
                     </div>
-
                 </div>
-            <?php endforeach; ?>
 
-        <?php else: ?>
+            <?php endif; ?>
 
-            <!-- Fallback estático si no hay programas destacados con imagen -->
-            <div class="carousel-item active hero-slide">
-                <img src="img/Mercadeo.png" class="d-block w-100" alt="CECO">
-                <div class="hero-content">
-                    <h1>Bienvenido a CECO</h1>
-                    <p>Formamos profesionales con excelencia académica</p>
-                    <div class="hero-buttons">
-                        <a href="#programas-section" class="btn btn-primary btn-lg">
-                            Ver programas
-                        </a>
-                    </div>
-                </div>
+        </div>
+
+        <!-- Controles — solo si hay más de 1 slide -->
+        <?php if (count($programasSlider) > 1): ?>
+            <button class="carousel-control-prev" type="button"
+                    data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button"
+                    data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+            <!-- Indicadores de posición -->
+            <div class="carousel-indicators">
+                <?php foreach ($programasSlider as $i => $_): ?>
+                    <button type="button"
+                            data-bs-target="#heroCarousel"
+                            data-bs-slide-to="<?= $i ?>"
+                            <?= $i === 0 ? 'class="active" aria-current="true"' : '' ?>
+                            aria-label="Slide <?= $i + 1 ?>">
+                    </button>
+                <?php endforeach; ?>
             </div>
-
         <?php endif; ?>
 
     </div>
-
-    <!-- Controles — solo si hay más de 1 slide -->
-    <?php if (count($programasSlider) > 1): ?>
-        <button class="carousel-control-prev" type="button"
-                data-bs-target="#heroCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button"
-                data-bs-target="#heroCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
-
-        <!-- Indicadores de posición -->
-        <div class="carousel-indicators">
-            <?php foreach ($programasSlider as $i => $_): ?>
-                <button type="button"
-                        data-bs-target="#heroCarousel"
-                        data-bs-slide-to="<?= $i ?>"
-                        <?= $i === 0 ? 'class="active" aria-current="true"' : '' ?>
-                        aria-label="Slide <?= $i + 1 ?>">
-                </button>
-            <?php endforeach; ?>
-        </div>
-    <?php endif; ?>
-
-</div>
-<!-- Fin BANNER PUBLICITARIO DE ENTRADA -->
+    <!-- Fin BANNER PUBLICITARIO DE ENTRADA -->
 
     <!-- Eslogan Cohesivo -->
     <div class="eslogan-container" data-aos="fade-up">
@@ -203,8 +292,6 @@
             <div class="col">
                 <a href="#programas-section" class="menu-circle-item ">
                     <div class="circle-icon-wrapper">
-                        <!-- Descomentar cuando el diseñador envíe el activo: -->
-                        <!-- <img src="assets/img/icon-programas.png" alt="Programas"> -->
                         <i class="bi bi-mortarboard-fill"></i>
                     </div>
                     <span class="menu-circle-text">Programas</span>
@@ -215,7 +302,6 @@
             <div class="col">
                 <a href="#" class="menu-circle-item">
                     <div class="circle-icon-wrapper">
-                        <!-- <img src="assets/img/icon-inscripciones.png" alt="Inscripciones"> -->
                         <i class="bi bi-file-earmark-text-fill"></i>
                     </div>
                     <span class="menu-circle-text">Inscripciones</span>
@@ -226,7 +312,6 @@
             <div class="col">
                 <a href="#" class="menu-circle-item">
                     <div class="circle-icon-wrapper">
-                        <!-- <img src="assets/img/icon-testimonios.png" alt="Testimonios"> -->
                         <i class="bi bi-chat-heart-fill"></i>
                     </div>
                     <span class="menu-circle-text">Testimonios</span>
@@ -237,7 +322,6 @@
             <div class="col">
                 <a href="#" class="menu-circle-item">
                     <div class="circle-icon-wrapper">
-                        <!-- <img src="assets/img/icon-convenios.png" alt="Convenios"> -->
                         <i class="bi bi-person-check-fill"></i>
                     </div>
                     <span class="menu-circle-text">Convenios</span>
@@ -248,7 +332,6 @@
             <div class="col">
                 <a href="#" class="menu-circle-item">
                     <div class="circle-icon-wrapper">
-                        <!-- <img src="assets/img/icon-aula.png" alt="Aula Virtual"> -->
                         <i class="bi bi-laptop-fill"></i>
                     </div>
                     <span class="menu-circle-text">Aula Virtual</span>
@@ -259,7 +342,6 @@
             <div class="col">
                 <a href="#" class="menu-circle-item">
                     <div class="circle-icon-wrapper">
-                        <!-- <img src="assets/img/icon-empleo.png" alt="Empleo"> -->
                         <i class="bi bi-briefcase-fill"></i>
                     </div>
                     <span class="menu-circle-text">Empleo</span>
@@ -270,7 +352,6 @@
             <div class="col">
                 <a href="#" class="menu-circle-item">
                     <div class="circle-icon-wrapper">
-                        <!-- <img src="assets/img/icon-eventos.png" alt="Eventos"> -->
                         <i class="bi bi-calendar-event-fill"></i>
                     </div>
                     <span class="menu-circle-text">Eventos</span>
@@ -281,7 +362,6 @@
             <div class="col">
                 <a href="#" class="menu-circle-item">
                     <div class="circle-icon-wrapper">
-                        <!-- <img src="assets/img/icon-ceco.png" alt="CECO"> -->
                         <i class="bi bi-building-fill"></i>
                     </div>
                     <span class="menu-circle-text">CECO</span>
@@ -315,9 +395,15 @@
                                     alt="<?= htmlspecialchars($programa['titulo']) ?>" class="card-img-top">
                             <?php endif; ?>
 
-                            <div class="card-body">
-                                <div class="feed-card-title">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <h3 class="feed-card-title mb-2">
                                     <?= htmlspecialchars($programa['titulo']) ?>
+                                </h3>
+                                <div class="mt-auto">
+                                    <a href="?page=programa&id=<?= $programa['id'] ?>"
+                                        class="btn btn-success btn-sm w-100 btn-buy shadow-sm">
+                                        Ver programa
+                                    </a>
                                 </div>
                             </div>
 
@@ -335,6 +421,60 @@
         </div>
     </section>
     <!-- Fin del feed de Programas Académicos -->
+
+    <!-- Feed de Cursos Online -->
+    <section id="cursos-section" class="px-2 pt-3" data-aos="fade-up">
+        <div class="section-title-container">
+            <h2 class="display-6 fw-bold mb-0">Cursos y Diplomados</h2>
+           <a href="?page=programas" class="text-primary small fw-semibold text-decoration-none">Ver todos</a>
+        </div>
+
+
+        <div class="row g-2 px-2">
+
+            <?php if (!empty($cursosDestacados)): ?>
+
+                <?php foreach ($cursosDestacados as $programa): ?>
+                    <div class="col-6 col-md-3">
+                        <div class="card feed-card border border-success border-opacity-10">
+
+                            <?php if (!empty($programa['ruta_archivo'])): ?>
+                                <img src="<?= BASE_URL . htmlspecialchars($programa['ruta_archivo']) ?>" class="card-img-top"
+                                    alt="<?= htmlspecialchars($programa['titulo']) ?>">
+                            <?php else: ?>
+                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=300&q=80"
+                                    class="card-img-top" alt="<?= htmlspecialchars($programa['titulo']) ?>">
+                            <?php endif; ?>
+
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <h3 class="feed-card-title mb-2">
+                                    <?= htmlspecialchars($programa['titulo']) ?>
+                                </h3>
+                                <div class="mt-auto">
+                                    <p class="card-text text-muted small">
+                                        <?= htmlspecialchars($programa['descripcion_corta'] ?? '') ?>
+                                    </p>
+                                    <a href="?page=programa&id=<?= $programa['id'] ?>"
+                                        class="btn btn-success btn-sm w-100 btn-buy shadow-sm">
+                                        Ver programa
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+
+            <?php else: ?>
+                <div class="col-12 text-center py-4 text-muted">
+                    <i class="bi bi-journal-x fs-2 d-block mb-2"></i>
+                    No hay cursos disponibles en este momento.
+                </div>
+            <?php endif; ?>
+
+        </div>
+    </section>
+    <!-- Fin Feed de Cursos Online -->
 
     <!-- Qué esperar de nuestros cursos -->
     <section class="py-5 bg-light" data-aos="fade-up">
@@ -417,60 +557,6 @@
         </div>
     </section>
     <!-- Fin Qué esperar de nuestros cursos -->
-
-    <!-- Feed de Cursos Online -->
-    <section id="cursos-section" class="px-2 pt-3" data-aos="fade-up">
-        <div class="section-title-container">
-            <h2 class="display-6 fw-bold mb-0">Cursos y Diplomados</h2>
-           <a href="?page=programas" class="text-primary small fw-semibold text-decoration-none">Ver todos</a>
-        </div>
-
-
-        <div class="row g-2 px-2">
-
-            <?php if (!empty($cursosDestacados)): ?>
-
-                <?php foreach ($cursosDestacados as $programa): ?>
-                    <div class="col-6 col-md-3">
-                        <div class="card feed-card border border-success border-opacity-10">
-
-                            <?php if (!empty($programa['ruta_archivo'])): ?>
-                                <img src="<?= BASE_URL . htmlspecialchars($programa['ruta_archivo']) ?>" class="card-img-top"
-                                    alt="<?= htmlspecialchars($programa['titulo']) ?>">
-                            <?php else: ?>
-                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=300&q=80"
-                                    class="card-img-top" alt="<?= htmlspecialchars($programa['titulo']) ?>">
-                            <?php endif; ?>
-
-                            <div class="card-body d-flex flex-column justify-content-between">
-                                <h3 class="feed-card-title mb-2">
-                                    <?= htmlspecialchars($programa['titulo']) ?>
-                                </h3>
-                                <div class="mt-auto">
-                                    <p class="card-text text-muted small">
-                                        <?= htmlspecialchars($programa['descripcion_corta'] ?? '') ?>
-                                    </p>
-                                    <a href="?page=programa&id=<?= $programa['id'] ?>"
-                                        class="btn btn-success btn-sm w-100 btn-buy shadow-sm">
-                                        Ver programa
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-
-            <?php else: ?>
-                <div class="col-12 text-center py-4 text-muted">
-                    <i class="bi bi-journal-x fs-2 d-block mb-2"></i>
-                    No hay cursos disponibles en este momento.
-                </div>
-            <?php endif; ?>
-
-        </div>
-    </section>
-    <!-- Fin Feed de Cursos Online -->
 
     <!-- Sección de Aliados -->
     <section class="aliados-section" data-aos="fade-up">
@@ -638,8 +724,6 @@
         </div>
     </section>
     <!-- Fin CTA -->
-
-    
 
     <!-- Footer -->
     <footer class="bg-white border-top py-4">

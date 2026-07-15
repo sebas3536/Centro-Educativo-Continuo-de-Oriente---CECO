@@ -128,6 +128,33 @@ switch ($page) {
         require __DIR__ . '/resources/views/editor/dashboard.php';
         break;
 
+
+    case 'programa':
+
+        $vistas = [
+            1 => "TecnicoPrimeraInfancia",
+            2 => "TecnicoAuxiliarAdministrativo",
+            3 => "TecnicoAuxiliarSeguridad",
+            4 => "TecnicoEnCocina",
+            5 => "TecnicoLogisticaPortuaria",
+            6 => "MarineroFlubial",
+            7 => "TecnicoMecánicaDiesel",
+            8 => "TecnicoMercadeoyVentas",
+            9 => "TécnicoOperaciónTránsito",
+            10 => "TecnicoOperadorBus",
+            11 => "TecnicoSistemasInformaticos"
+        ];
+
+        $id = (int) ($_GET['id'] ?? 0);
+
+        if (!isset($vistas[$id])) {
+            die('Programa no encontrado');
+        }
+
+        require __DIR__ . '/resources/views/frontend/programas/' . $vistas[$id] . '.php';
+
+        break;
+
     case 'programas':
         require_once __DIR__ . '/app/Models/Programa.php';
         require_once __DIR__ . '/app/Controllers/HomeController.php';
