@@ -31,7 +31,8 @@ $imagenHero = !empty($programa['imagen_principal'])
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <!-- Estilos propios -->
-    <link rel="stylesheet" href="/../../../../css/programas.css">
+        <link rel="stylesheet" href="css/programas.css">
+
 
 </head>
 <body>
